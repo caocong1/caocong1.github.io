@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<!-- 此处修改数据库连接jar路径，各人根据自己存放路径不同进行相应修改修改-->
+  <classPathEntry location="C:\Users\cao\.m2\repository\mysql\mysql-connector-java\5.1.38\mysql-connector-java-5.1.38.jar" />
+  
+  <!-- 此处id为数据库名称标示无实际作用可根据使用数据库名称进行修改，后面两项使用默认即可，不需进行修改 -->
+  <context id="test" defaultModelType="flat" targetRuntime="MyBatis3Simple">
+  
+	<!-- 此处不需进行修改 -->
+    <commentGenerator >  
+    	<property name= "suppressAllComments" value="true"/>
+        <property name="suppressDate" value="false" />
+  	</commentGenerator>
+	
+	<!-- 数据库连接URL、driverClass、username、password配置，各人根据实际情况配置 -->
+    <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/test?serverTimezone=UTC" 
+    driverClass="com.mysql.jdbc.Driver" 
+    password="root" 
+    userId="root" />
+	
+    <!-- 此处targetPackage修改生成bean.java文件的具体包路径，targetProject修改的具体生成的项目名称 -->
+    <javaModelGenerator targetPackage="com.test.bean" targetProject="test" />
+	
+	<!-- 此处targetPackage修改生成mapper.xml的具体包路径，targetProject修改的具体生成的项目名称 -->
+    <sqlMapGenerator targetPackage="com.test.dao.xml" targetProject="test" />
+	
+	<!-- 此处targetPackage修改生成dao.java文件的具体包路径，targetProject修改的具体生成的项目名称 -->
+    <javaClientGenerator targetPackage="com.test.dao" targetProject="test" type="XMLMAPPER" />
+    
+    <!-- 此处tableName修改的是需要生成的具体表名，domainObjectName修改的是对应数据表生成相应实体类bean的名称 -->
+    <table tableName="t_class" domainObjectName="ClassDao">
+    </table>
+
+
+	<!-- 需要一次生成多个表对应的bean、dao、mapper.xml只需要复制上面table标签，修改相应值即可-->
+  </context>
+</generatorConfiguration>
