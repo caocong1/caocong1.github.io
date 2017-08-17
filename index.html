@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+
+	<body>
+
+		<div id="who" style="width: 463px; height: 500px; background: url(img/who.jpg);">
+<input id="text1"style="position: absolute; top: 50px; left: 50px;" />
+</div>
+		<br>
+		<input id="button" class="example1" type="button" value="点我生成">
+		<p>结果：</p>
+		<br>
+		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js "></script>
+		<script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.min.js "></script>
+		<script src="https://cdn.bootcss.com/draggabilly/2.1.1/draggabilly.pkgd.min.js"></script>
+		<script type="text/javascript ">
+			$(document).ready(function() {
+				$(".example1 ").on("click ", function(event) {
+					event.preventDefault();
+					html2canvas(document.getElementById('who'), {
+						onrendered: function(canvas) {
+														canvas.id = "mycanvas";
+														var dataUrl = canvas.toDataURL();
+														var newImg = document.createElement("img");
+														newImg.src = dataUrl;
+														document.body.appendChild(newImg);
+//														document.body.appendChild(canvas);
+						}
+					});
+				});
+var elem = document.getElementById('text1');
+var draggie = new Draggabilly( elem );
+ 
+function onDragMove( instance, event, pointer ) {
+  console.log( 'dragMove on ' + event.type +
+    pointer.pageX + ', ' + pointer.pageY +
+    ' position at ' + instance.position.x + ', ' + instance.position.y );
+}
+// bind event listener
+draggie.on( 'dragMove', onDragMove );
+// un-bind event listener
+draggie.off( 'dragMove', onDragMove );
+// return true to trigger an event listener just once
+draggie.once( 'dragMove', function() {
+  console.log('Draggabilly did move, just once');
+});
+			});
+			
+		</script>
+	</body>
+
+</html>
