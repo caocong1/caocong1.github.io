@@ -26,7 +26,7 @@ $('#refresh').on('click', e => {
 const getAddressByCoord = crd => new Promise((resolve, reject) => {
   $.get(`https://restapi.amap.com/v3/geocode/regeo?location=${crd}&key=75f3b7939d94820dbef38cb10dc42b27`, res => {
     if (res.status === '1') {
-      resolve(typeof res.regeocodes['formatted_address'] === 'string' ? res.regeocodes['formatted_address'] : res.regeocodes['formatted_address'].join(''))
+      resolve(typeof res.regeocode['formatted_address'] === 'string' ? res.regeocode['formatted_address'] : res.regeocode['formatted_address'].join(''))
     } else {
       reject(res.info)
     }
