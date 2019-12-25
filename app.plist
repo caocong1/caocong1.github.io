@@ -11,13 +11,13 @@
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-					<string>http://124.202.17.138:8008/portal/noodle.ipa</string>
+					<string>http://caocong1.github.io/noodle.ipa</string>
 				</dict>
 			</array>
 			<key>metadata</key>
 			<dict>
 				<key>bundle-identifier</key>
-				<string>com.greenism.noodle</string>
+				<string>MHK5R57ZM4.com.greenism.noodleFlutter</string>
 				<key>bundle-version</key>
 				<string>1.0</string>
 				<key>kind</key>
