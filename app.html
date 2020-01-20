@@ -16,7 +16,7 @@
 </head>
 
 <body>
-  <div id="weixin" style="display:none; width: 100vw;height: 100vh;background-image: url(openbrowser.png);background-color: #000;background-repeat: no-repeat;background-size: contain;"></div>
+  <div id="weixin" style="display: none; width: 100vw;height: 100vh;background-image: url(openbrowser.png);background-color: #000;background-repeat: no-repeat;background-size: contain;"></div>
   <div id="iphone" style="display: none;">
     <a href="itms-services:///?action=download-manifest&url=https://caocong1.github.io/app.plist">点击下载并安装</a>
   </div>
@@ -36,11 +36,11 @@
       var ua = window.navigator.userAgent.toLowerCase()
       return ua.match(/android/i) == 'android'
     }
-    if(isWeiXin){
+    if(isWeiXin()){
       document.getElementById('weixin').style.display = 'block'
-    }else if(isiPhone){
+    }else if(isiPhone()){
       document.getElementById('iphone').style.display = 'block'
-    }else if(isAndroid){
+    }else if(isAndroid()){
       document.getElementById('android').style.display = 'block'
     }
   </script>
