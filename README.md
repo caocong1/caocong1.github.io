@@ -99,3 +99,11 @@
     任务3 :2018-06-12 , 12d
     任务4 : 24d
 ```
+st=>start: Start
+e=>end
+op=>operation: My Operation
+cond=>condition: Yes or No?
+
+st->op->cond
+cond(yes)->e
+cond(no)->op
